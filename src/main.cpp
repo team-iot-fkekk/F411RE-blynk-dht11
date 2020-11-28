@@ -14,7 +14,7 @@ DHT dht(DHTPIN, DHTTYPE);
 // Go to the Project Settings (nut icon).
 // char auth[] = "134K1A5E-siqFcnMZucBbddzFvv3L5IC"; //f411reesp
 char auth[] = "tSLCLqAUk1lYC10Y3Ui5FBpoIcKehMgi"; //asus_f411
-
+char serverip[] = "192.168.1.102";
 // Your WiFi credentials.
 // Set password to "" for open networks.
 char ssid[] = "MiNE_1";
@@ -94,7 +94,7 @@ void setup()
   EspSerial.begin(ESP8266_BAUD);
   delay(10);
 
-  Blynk.begin(auth, wifi, ssid, pass, "192.168.1.100", 8080);
+  Blynk.begin(auth, wifi, ssid, pass, serverip, 8080);
   // Setup a function to be called every second
   timer.setInterval(1000L, myTimerEvent);
 }
